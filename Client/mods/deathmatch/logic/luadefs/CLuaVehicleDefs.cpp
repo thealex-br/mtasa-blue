@@ -4208,9 +4208,6 @@ int CLuaVehicleDefs::GetVehicleWheelFrictionState(CClientVehicle* pVehicle, unsi
     if (wheel < 0 || wheel > 3)
         throw std::invalid_argument("Invalid wheel number");
 
-    if (CClientVehicleManager::GetVehicleType(pVehicle->GetModel()) != CLIENTVEHICLE_CAR)
-        throw std::invalid_argument("Invalid vehicle type");
-
     return pVehicle->GetWheelFrictionState(wheel);
 }
 
