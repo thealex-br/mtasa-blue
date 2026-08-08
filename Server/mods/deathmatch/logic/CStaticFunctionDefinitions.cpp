@@ -12769,21 +12769,22 @@ bool CStaticFunctionDefinitions::IsElementSpawned(CElement* pElement, bool& bOut
 {
     assert(pElement);
 
-    int iType = pElement->GetType();
-    switch (iType)
+    bOutSpawned = false;
+
+    switch (pElement->GetType())
     {
         case CElement::PLAYER:
         case CElement::PED:
         case CElement::PICKUP:
         {
             bOutSpawned = pElement->IsSpawned();
-            return true;
+            break;
         }
         default:
             return false;
     }
 
-    return false;
+    return true;
 }
 
 bool CStaticFunctionDefinitions::HasPlayerJoined(CPlayer* pPlayer, bool& bJoined)
