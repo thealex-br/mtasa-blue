@@ -12764,3 +12764,30 @@ bool CStaticFunctionDefinitions::SpawnVehicleFlyingComponent(CVehicle* const veh
 
     return true;
 }
+
+bool CStaticFunctionDefinitions::IsElementSpawned(CElement* pElement)
+{
+    assert(pElement);
+
+    int iType = pElement->GetType();
+    switch (iType)
+    {
+        case CElement::PLAYER:
+        case CElement::PED:
+        case CElement::PICKUP:
+        {
+            return pElement->IsSpawned();
+        }
+        default:
+            return false;
+    }
+
+    return false;
+}
+
+bool CStaticFunctionDefinitions::HasPlayerJoined(CPlayer* pPlayer)
+{
+    assert(pPlayer);
+
+    return pPlayer->IsJoined();
+}
