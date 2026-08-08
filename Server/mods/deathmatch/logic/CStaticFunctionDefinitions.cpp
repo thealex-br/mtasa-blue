@@ -12765,7 +12765,7 @@ bool CStaticFunctionDefinitions::SpawnVehicleFlyingComponent(CVehicle* const veh
     return true;
 }
 
-bool CStaticFunctionDefinitions::IsElementSpawned(CElement* pElement)
+bool CStaticFunctionDefinitions::IsElementSpawned(CElement* pElement, bool& bOutSpawned)
 {
     assert(pElement);
 
@@ -12776,7 +12776,8 @@ bool CStaticFunctionDefinitions::IsElementSpawned(CElement* pElement)
         case CElement::PED:
         case CElement::PICKUP:
         {
-            return pElement->IsSpawned();
+            bOutSpawned = pElement->IsSpawned();
+            return true;
         }
         default:
             return false;
@@ -12785,9 +12786,10 @@ bool CStaticFunctionDefinitions::IsElementSpawned(CElement* pElement)
     return false;
 }
 
-bool CStaticFunctionDefinitions::HasPlayerJoined(CPlayer* pPlayer)
+bool CStaticFunctionDefinitions::HasPlayerJoined(CPlayer* pPlayer, bool& bJoined)
 {
     assert(pPlayer);
 
-    return pPlayer->IsJoined();
+    bJoined = pPlayer->IsJoined();
+    return true;
 }
