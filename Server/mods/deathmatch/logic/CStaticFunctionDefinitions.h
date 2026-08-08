@@ -79,7 +79,7 @@ public:
     static bool           GetLowLodElement(CElement* pElement, CElement*& pOutLowLodElement);
     static bool           IsElementLowLod(CElement* pElement, bool& bOutLowLod);
     static bool           IsElementCallPropagationEnabled(CElement* pElement, bool& bOutEnabled);
-    static bool           IsElementSpawned(CElement* pElement, bool& bOutSpawned);
+    static bool           IsElementSpawned(CElement* pElement);
 
     // Element set funcs
     static bool ClearElementVisibleTo(CElement* pElement);
@@ -138,7 +138,7 @@ public:
     static bool               GetPlayerIP(CElement* pElement, SString& strOutIP);
     static CAccount*          GetPlayerAccount(CElement* pElement);
     static const CMtaVersion& GetPlayerVersion(CPlayer* pPlayer);
-    static bool               HasPlayerJoined(CPlayer* pPlayer, bool& bJoined);
+    static bool               HasPlayerJoined(CPlayer* pPlayer);
 
     // Player set functions
     static bool SetPlayerMoney(CElement* pElement, long lMoney, bool bInstant);
