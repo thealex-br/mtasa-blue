@@ -12780,11 +12780,9 @@ bool CStaticFunctionDefinitions::IsElementSpawned(CElement* pElement)
         default:
             return false;
     }
-
-    return false;
 }
 
-bool CStaticFunctionDefinitions::HasPlayerJoined(CPlayer* pPlayer, bool& bJoined)
+bool CStaticFunctionDefinitions::HasPlayerJoined(CPlayer* pPlayer)
 {
     assert(pPlayer);
 
