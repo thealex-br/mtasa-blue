@@ -69,6 +69,10 @@
 #include "packets/CChatClearPacket.h"
 #include "packets/CElementRPCPacket.h"
 #include "packets/CVehicleInOutPacket.h"
+#include "CElement.h"
+#include "CPickup.h"
+#include "CPlayer.h"
+#include "CPed.h"
 #include "version.h"
 #include <net/rpc_enums.h>
 
